@@ -16,7 +16,7 @@ export class SpotifyService {
     const url = `https://api.spotify.com/v1/search?q=${query}&type=track`;
     const headers = new HttpHeaders({
       Authorization:
-        'Bearer BQD7yUGiYyy682vv_6o2mpDOqeOHTJYU1OGXEYipjqMJ2JbTBzzlbygfsaMaqxMjupr9lk0wm9y3jJmmg2v1BjrPFykRnI--yFSIEVbab7tiQdFTMFJSYGn1l3OBjFW5jphqOazRx-we'
+        'Bearer BQBocX8PxUJVPqJ0eGVMvh3JsZMHzdVKvYSkD-RC7xHbs-sCC_j0aJCu2UxYTYjNBQfnVMTeBF_EZBv2LhTXSEadnCqiQoQLYPg2ADlrTD1gBo-BfjDVbI4KgGMJGTJbFRWE71xHSFUH'
     });
 
     let obsTracks = this.http.get(url, { headers });
@@ -27,10 +27,30 @@ export class SpotifyService {
     const url = `https://api.spotify.com/v1/tracks/${id}`;
     const headers = new HttpHeaders({
       Authorization:
-       'Bearer BQD7yUGiYyy682vv_6o2mpDOqeOHTJYU1OGXEYipjqMJ2JbTBzzlbygfsaMaqxMjupr9lk0wm9y3jJmmg2v1BjrPFykRnI--yFSIEVbab7tiQdFTMFJSYGn1l3OBjFW5jphqOazRx-we'
+       'Bearer BQBocX8PxUJVPqJ0eGVMvh3JsZMHzdVKvYSkD-RC7xHbs-sCC_j0aJCu2UxYTYjNBQfnVMTeBF_EZBv2LhTXSEadnCqiQoQLYPg2ADlrTD1gBo-BfjDVbI4KgGMJGTJbFRWE71xHSFUH'
     });
 
     return this.http.get(url, { headers });
   }
+   getArtist(id : string){
+    const url = `https://api.spotify.com/v1/artists/${id}`;
+    const headers = new HttpHeaders({
+      Authorization:
+      'Bearer BQBocX8PxUJVPqJ0eGVMvh3JsZMHzdVKvYSkD-RC7xHbs-sCC_j0aJCu2UxYTYjNBQfnVMTeBF_EZBv2LhTXSEadnCqiQoQLYPg2ADlrTD1gBo-BfjDVbI4KgGMJGTJbFRWE71xHSFUH'});
+
+    return this.http.get(url, { headers });
+  }
+  getAlbum(id : string){
+    const url = `https://api.spotify.com/v1/albums/${id}`;
+    const headers = new HttpHeaders({Authorization:'Bearer BQBocX8PxUJVPqJ0eGVMvh3JsZMHzdVKvYSkD-RC7xHbs-sCC_j0aJCu2UxYTYjNBQfnVMTeBF_EZBv2LhTXSEadnCqiQoQLYPg2ADlrTD1gBo-BfjDVbI4KgGMJGTJbFRWE71xHSFUH'});
+
+    return this.http.get(url, { headers });
+  }
+//getTopTracks(id : string){
+  //  const url = `https://api.spotify.com/v1/artists/${id}/top-tracks`;
+    //const headers = new HttpHeaders({Authorization:'Bearer BQBocX8PxUJVPqJ0eGVMvh3JsZMHzdVKvYSkD-RC7xHbs-sCC_j0aJCu2UxYTYjNBQfnVMTeBF_EZBv2LhTXSEadnCqiQoQLYPg2ADlrTD1gBo-BfjDVbI4KgGMJGTJbFRWE71xHSFUH'});
+
+   // return this.http.get(url, { headers });
+  //}
 
 }
